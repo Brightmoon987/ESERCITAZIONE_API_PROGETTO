@@ -7,7 +7,7 @@
 
 
     <head>
-        <title>People in space and their vehicles</title>
+        <title>Astronauts and their craft</title>
     
     
     
@@ -25,16 +25,30 @@
 
     <body>
    
-        <div>   
+        <h1>People in Space</h1>
+        
+        
+        {% if data %}
+
+            <ul>
+                {% for person in data %}
+
+                    <li>{{ person.name }} - {{ person.craft}}</li>
 
             
+                {% endfor %}
+            
+            </ul>
 
-
-
-
-        </div>
-
-
+        
+        {% else %}
+        
+        
+        <p>Data cannot be displayed</p>
+        
+        
+        
+        {% endif %}    
 
 
     </body>

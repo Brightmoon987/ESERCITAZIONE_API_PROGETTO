@@ -3,19 +3,22 @@ import requests
 
 def request1():
     
-    answer = requests.get("http://api.open-notify.org/astros.json")
+    risposta = requests.get("http://api.open-notify.org/astros.json")
 
-    data1 = answer.json()
-
-
-
-    return data1
-
+    
+    
+    
+    data = risposta.json()
 
 
 
+    return data
 
 
+    astronauti = [{"name": person["name"],"craft": person["craft"]} for person in data["people"]]
+
+
+    return astronauti
 
 
 
